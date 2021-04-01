@@ -300,18 +300,18 @@ Where:
 78 is Least Significant Bit -> LSB
 12 is Most Significant Bit -> MSB
 
-        OFFSET       |    VALUES
-		  0000       |    78
-		  0001       |    56
-		  0002       |    34
-		  0003       |    12
+ OFFSET       |    VALUES
+  0000        |     78
+  0001        |     56
+  0002        |     34
+  0003        |     12
 
 If we were to look at Big Endian, the table would be as follows:
 
-        OFFSET       |    VALUES
-		  0000       |    12
-		  0001       |    34
-		  0002       |    56
-		  0003       |    78
+ OFFSET       |    VALUES
+  0000        |     12
+  0001        |     34
+  0002        |     56
+  0003        |     78
 		  
 ```
