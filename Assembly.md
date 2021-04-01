@@ -313,13 +313,5 @@ If we were to look at Big Endian, the table would be as follows:
 		  0001       |    34
 		  0002       |    56
 		  0003       |    78
-```
-
-
-
-                AP AH AL
-EAX : 00 00  00  00
-
-```
-
+		  
 ```
