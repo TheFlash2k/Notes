@@ -1,3 +1,8 @@
+# Author: Ali Taqi Wajid
+=============================================================
+
+<h1 style="text-align:center">Assembly Language.</h1>
+
 # Integers:
 ## Structure:
 
