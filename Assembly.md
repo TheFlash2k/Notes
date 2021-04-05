@@ -2,6 +2,17 @@
 ### Book : [KIP R. Irvine Assembly Language for x86 Processor Sixth Edition](http://index-of.es/Programming/Assembly/Assembly%20Language%20for%20x86%20Processors%206th%20Ed.pdf)
 ### Course : *CS232*- Computer Organization and Assembly Langauge
 ----
+
+# List of Content:
+# [x86 Data Types](#x86-data-types)
+# [Basic x86 Microcomputer Design](#basic-x86-microcomputer-design)
+# [x86 Operating Modes](#x86-operating-modes)
+# [Registers](#registers)
+# [Integers](#Integers)
+# [Directives](#Directives)
+# [Instruction](#Instruction)
+# [Endianess](#Endianess)
+---
 # x86 Data Types:
 ## Unsigned:
 | System | Range | Power of 2 | In Bytes | In Bits |
@@ -115,6 +126,9 @@ BX is used as a `base` register and is typically used to hold the address of a p
 #### CX:
 CX is called as `count` register and is typically used for looping.
 #### DX:
+DX is called as `data` register and is commonly used for multiplication and division.
+
+Each of these `GPR` can be treated either as a `16 bit` quantity or an `8 bit` quantity. We have already discussed this topic in [AX](#AX)
 # Integers:
 ## Structure:
 
