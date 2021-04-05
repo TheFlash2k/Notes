@@ -6,6 +6,7 @@
 # List of Content:
 ### [x86 Data Types](#x86-data-types-1)
 ### [Basic x86 Microcomputer Design](#basic-x86-microcomputer-design-1)
+### [Instruction Execution Cycle](#instruction-execution-cycle)
 ### [x86 Operating Modes](#x86-operating-modes-1)
 ### [Registers](#registers-1)
 ### [Integers](#integers-1)
@@ -63,10 +64,15 @@ A bus is a group of parallel wires that copy data from one of the computer to an
 - Control Bus
 - Address Bus
 ### Data Bus:
+The data bus transfers data between the cpu and the memory.
 ### Control Bus:
+Control bus uses binary signals to synchronize actions of all devices attached to the system bus.
 ### Address Bus:
-The address bus carries addressing signals from the processor to memory, I/O (or peripherals), and other addressable devices around the processor. Control signals move out of the processor, but not in to it.
+Address bus holds the addresses of the instructions and data when they are currently execution. The address bus carries addressing signals from the processor to memory, I/O (or peripherals), and other addressable devices around the processor. Control signals move out of the processor, but not in to it.
 [Reference](https://www.microcontrollertips.com/internal-processor-bus-data-address-control-bus-faq)
+
+# Instruction Execution Cycle
+> Haven't really touched this topic yet so not making any notes about it.
 
 # x86 Operating Modes:
 There are three primary operating modes:
@@ -83,7 +89,11 @@ In this mode, the programming environment of Intel 8086 processor is implemented
 ## System Management Mode:
 This is also known as `SMM`. It provides the Operating System with the mechanisms to implement to functions such as Power Management, System Security. These are often used by computer manufacturers who customize their processor for a particular system setup. 
 
+## Difference between each mode:
+One of the major difference b/w each of the modes is in the way memory addressing works. Both the amount of memory that can be addressed and the translation process between logical addresses and to physical addresses may vary depending on the operating mode.
+
 # Registers:
+![](./imgs/registers.png) <br>
  A register is a storage unit / container inside the processor core which can be accessed at much higher speeds than the conventional memory.
  ## 8086 Registers:
  Before moving on towards the more complex `extended` registers of x86 architecture, we must first know the basics, the `16 bit` registers or the `8086` registers. These registers are split into the following four categories.
@@ -92,7 +102,7 @@ This is also known as `SMM`. It provides the Operating System with the mechanism
  - Status and Control Registers
  - Segment Regsiters
 
-### General Purpose Registers
+### 16-bit General Purpose Registers
 There are four general purpose registers:
 #### AX:
 AX is used as an [`accumulator`](https://www.computerhope.com/jargon/a/accumulator.htm) and is preffered for most arthimetic and logical operations. It acts as a temporary storage location which holds an intermediate value in a mathematical and logical calculation. Each of the previous value in the accumulator is overwritten with new intermediate results of an operation.
@@ -122,11 +132,61 @@ END main
 ```
 After running this program, we can have a look at the registers window in our Visual Studio, we can see that, AX -> 12. Just by looking at the `main` procedure, we can somewhat grasp as to what is going on.
 #### BX:
-BX is used as a `base` register and is typically used to hold the address of a procedure or a variable. In other words, it stores the value of the offset.
+BX is used as a `base` register and is typically used to hold the address of a procedure or a variable. In other words, it stores the value of the offset. Just like AX, this also can be divided into 2 sub-registers of 8 bits known as `BH` and `BL`
 #### CX:
-CX is called as `count` register and is typically used for looping.
+CX is called as `count` register and is typically used for looping. Just like AX, this also can be divided into 2 sub-registers of 8 bits known as `CH` and `CL`
 #### DX:
-DX is called as `data` register and is commonly used for multiplication and division.
+DX is called as `data` register and is commonly used for multiplication and division. Just like AX, this also can be divided into 2 sub-registers of 8 bits known as `DH` and `DL`
+
+### Segment Registers:
+- CS
+- DS
+- ES
+- SS
+### Index Registers:
+- SI
+- DI
+- DP
+- SP
+### Instruction Pointer
+- IP
+### Flags Register
+- Flags
+
+## x86 General Purpose Registers.
+Unlike [16-bit general purpose registes](#16-bit-general-purpose-registers), there are 8 32 bits general purpose registers:
+- EAX
+- EBX
+- ECX
+- EDX
+- EBP
+- ESP
+- ESI
+- EDI
+Where `E` in each of these stands for `Extended`. Meaning each of these are extended from their orignal counter-parts. EAX is `Extended` from `AX` etc. Meaning, an additional 32 bit extra data can be stored in each of these registers. As we can notice that, the 16-bit Segment Registers from 8086 have also been added here as part of the General Purpose Registers.
+
+#### EAX
+#### EBX
+#### ECX
+#### EDX
+#### EBP
+#### ESP
+#### ESI
+#### EDI
+
+## x86 Segment Registers:
+Similar to 8086, the Segment Registers in x86 are also 16 bits. But, from 4 in 8086, their amount has been increased to 6. These are:
+- CS
+- ES
+- SS
+- DS
+- FS
+- GS
+
+## Instruction Pointer
+- EIP
+## Flags Register
+- EFlags
 
 Each of these `GPR` can be treated either as a `16 bit` quantity or an `8 bit` quantity. We have already discussed this topic in [AX](#AX)
 # Integers:
