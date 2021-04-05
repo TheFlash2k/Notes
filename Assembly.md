@@ -46,15 +46,16 @@ Has the following types:
 - RAM
 
 ## 3. Buses:
-A bus is a group of parallel wires that copy data from one of the computer to another. There are 4 buses
+![[Pasted image 20210406032931.png]]
+A bus is a group of parallel wires that copy data from one of the computer to another. A bus is a pathway for digital signals to rapidly move data. There are 3 buses:
 - Data Bus
-- I/O Bus
 - Control Bus
 - Address Bus
 ### Data Bus:
-### I/O Bus:
 ### Control Bus:
 ### Address Bus:
+The address bus carries addressing signals from the processor to memory, I/O (or peripherals), and other addressable devices around the processor. Control signals move out of the processor, but not in to it.
+[Reference](https://www.microcontrollertips.com/internal-processor-bus-data-address-control-bus-faq)
 
 # x86 Operating Modes:
 There are three primary operating modes:
