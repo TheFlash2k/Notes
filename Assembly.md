@@ -46,7 +46,7 @@ Has the following types:
 - RAM
 
 ## 3. Buses:
-![[Pasted image 20210406032931.png]]
+![](Pasted image 20210406032931.png)
 A bus is a group of parallel wires that copy data from one of the computer to another. A bus is a pathway for digital signals to rapidly move data. There are 3 buses:
 - Data Bus
 - Control Bus
