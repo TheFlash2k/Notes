@@ -1,0 +1,1 @@
+# Will make notes on this once im finished with the assembly ones.
