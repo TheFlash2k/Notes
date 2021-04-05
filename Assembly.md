@@ -8,10 +8,10 @@
 ## [Basic x86 Microcomputer Design](#basic-x86-microcomputer-design)
 ## [x86 Operating Modes](#x86-operating-modes)
 ## [Registers](#registers)
-## [Integers](#Integers)
-## [Directives](#Directives)
-## [Instruction](#Instruction)
-## [Endianess](#Endianess)
+## [Integers](#integers)
+## [Directives](#directives)
+## [Instruction](#instruction)
+## [Endianess](#endianess)
 ---
 # x86 Data Types:
 ## Unsigned:
