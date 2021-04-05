@@ -1,11 +1,59 @@
 # Author: Ali Taqi Wajid
 
-<h1 style="text-align:center">Assembly Language.</h1>
+<br><h1 style="text-align:center;">Assembly Language.</h1><br>
 
-# Integers:
+# > x86 Data Types:
+## Unsigned:
+| System | Range | Power of 2 | In Bytes | In Bits |
+| -------- | ------ | ----------- | -------- |--------|
+| Byte | 0-255 | 0 to (2<sup>8</sup> - 1) | 1 Byte | 8 bits |
+| Word | 0-65535 | 0 to (2<sup>16</sup> - 1) | 2 Byte | 16 bits |
+| Doubleword | 0-4,294,967,295 | 0 to (2<sup>32</sup> - 1) | 4 Byte | 32 bits |
+| Quadword | 0-18,446,744,073,709,551,615 | 0 to (2<sup>64</sup> - 1) | 8 Byte | 64 bits |
+
+## Signed:
+| System | Range | Power of 2 | In Bytes | In Bits |
+| -------- | ------ | ----------- | -------- |--------|
+| Byte | -128 to +127 | (-2<sup>7</sup> to +2<sup>7</sup> - 1) | 1 Byte | 8 bits |
+| Word | -32,768 to +32,767 | (-2<sup>15</sup> to +2<sup>15</sup> - 1) | 2 Byte | 16 bits |
+| Doubleword | -2,147,483,648 to +2,147,483,647 | (-2<sup>31</sup> to +2<sup>31</sup> - 1) | 4 Byte | 32 bits |
+| Quadword | -9,223,372,036,864,775,808 to +9,223,372,036,864,775,807 | (-2<sup>63</sup> to +2<sup>63</sup> - 1) | 8 Byte | 64 bits |
+
+# > Basic x86 Microcomputer Design:
+## 1. CPU:
+It is called Central Processing Unit and it is where the calculations and all the logical operations take place and it contains a limited number of storage locations called `registers`.
+The other components interact with the CPU through the use of PINS
+Most of these pings connect to the `data bus`, `control bus` and `address bus`
+It also has the following parts:
+- High Frequency Clock
+- Contrl Unit (CU)
+- Arithmetic Logic Unit (ALU)
+
+### Clock:
+A clock synchronizes the internal operations of the CPU with other components within the system.
+### Control Unit:
+The control unit coordinates the sequences of steps involved in executing machine instructions.
+### Arthimetic Logic Unit:
+It performs all the arthimetic opertions such as addition, subtraction and/or multiplication. And it also handles the boolean experessions such as AND, OR and/or NOT.
+
+## 2. Memory Storage Unit:
+It is the main storage unit.
+Receives requests for data from the CPU.
+Is used to transfer data from RAM to CPU and vice versa.
+Holds the data and instructions of the program(s) that is/are running.
+Has the following types:
+- ROM
+- RAM
+
+## 3. Buses:
+
+# > Registers:
+ - In any of the register, we cannot directly access the upper 16 bits.
+
+# > Integers:
 ## Structure:
 
-# Directives:
+# > Directives:
 - Assist and control assembly process
 - Change the way code is assembled
 - Also called pseudo-ops
@@ -32,7 +80,7 @@
 ### .DWORD:
 - Same as .DD
 
-# Instruction:
+# > Instruction:
 - A statement that becomes exectuable when a program is assembled is called an Instruction.
 - They are translated by assembler into machine language bytes.
 
@@ -109,7 +157,7 @@ start: mov ax,bax ; <- This is completely valid
 ### Block Comments:
 - Block Comments:
 - `COMMENT` Keyword is used to declare a multiline comment.
-```
+```asm
 COMMENT !
 	THIS IS
 		A MULTI LINE
