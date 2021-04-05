@@ -4,13 +4,13 @@
 ----
 
 # List of Content:
-### [x86 Data Types](#x86-data-types)
-### [Basic x86 Microcomputer Design](#basic-x86-microcomputer-design)
-### [x86 Operating Modes](#x86-operating-modes)
-### [Registers](#registers)
-### [Integers](#integers)
-### [Directives](#directives)
-### [Instruction](#instruction)
+### [x86 Data Types](#x86-data-types-1)
+### [Basic x86 Microcomputer Design](#basic-x86-microcomputer-design-1)
+### [x86 Operating Modes](#x86-operating-modes-1)
+### [Registers](#registers-1)
+### [Integers](#integers-1)
+### [Directives](#directives-1)
+### [Instruction](#instruction-1)
 ### [Endianess](#endianess-1)
 ---
 # x86 Data Types:
