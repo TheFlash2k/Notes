@@ -1,8 +1,8 @@
 # Author: Ali Taqi Wajid
-
-<br><h1 style="text-align:center;">Assembly Language.</h1><br>
-
-# > x86 Data Types:
+### Book : [KIP R. Irvine Assembly Language for x86 Processor Sixth Edition](http://index-of.es/Programming/Assembly/Assembly%20Language%20for%20x86%20Processors%206th%20Ed.pdf)
+### Course : *CS232*- Computer Organization and Assembly Langauge
+----
+# x86 Data Types:
 ## Unsigned:
 | System | Range | Power of 2 | In Bytes | In Bits |
 | -------- | ------ | ----------- | -------- |--------|
@@ -19,7 +19,7 @@
 | Doubleword | -2,147,483,648 to +2,147,483,647 | (-2<sup>31</sup> to +2<sup>31</sup> - 1) | 4 Byte | 32 bits |
 | Quadword | -9,223,372,036,864,775,808 to +9,223,372,036,864,775,807 | (-2<sup>63</sup> to +2<sup>63</sup> - 1) | 8 Byte | 64 bits |
 
-# > Basic x86 Microcomputer Design:
+# Basic x86 Microcomputer Design:
 ## 1. CPU:
 It is called Central Processing Unit and it is where the calculations and all the logical operations take place and it contains a limited number of storage locations called `registers`.
 The other components interact with the CPU through the use of PINS
@@ -46,14 +46,78 @@ Has the following types:
 - RAM
 
 ## 3. Buses:
+A bus is a group of parallel wires that copy data from one of the computer to another. There are 4 buses
+- Data Bus
+- I/O Bus
+- Control Bus
+- Address Bus
+### Data Bus:
+### I/O Bus:
+### Control Bus:
+### Address Bus:
 
-# > Registers:
- - In any of the register, we cannot directly access the upper 16 bits.
+# x86 Operating Modes:
+There are three primary operating modes:
+- Protected Mode
+- Real-Address Mode
+- System Management Mode
 
-# > Integers:
+## Protected Mode:
+It has a sub-mode called `Virtual-8086 Mode`. This mode is the native state of the processor in which all instructions and features are available.  Programs are given seperate memory areas called `segments`. Which allows the processor to prevent programs from referencing outside of their segments. While in protected mode, the processor can directly executre real-address mode software such as `Obsidian`, `Word` etc in a safe multi-tasking environment. This means that, consider if a program was running such as `Sublime Text` and the program crashes, this mode would allow the program to be isolated and do not affected the other programs running.
+
+## Real-Address Mode:
+In this mode, the programming environment of Intel 8086 processor is implemented with a few extra features such as the ability to switch into other modes. This mode allows direct access to the system memory/hardware devices. and is used to run `Microsoft` or other vendors' programs. Programs running in this mode may allow the Operating System to crash.
+
+## System Management Mode:
+This is also known as `SMM`. It provides the Operating System with the mechanisms to implement to functions such as Power Management, System Security. These are often used by computer manufacturers who customize their processor for a particular system setup. 
+
+# Registers:
+ A register is a storage unit / container inside the processor core which can be accessed at much higher speeds than the conventional memory.
+ ## 8086 Registers:
+ Before moving on towards the more complex `extended` registers of x86 architecture, we must first know the basics, the `16 bit` registers or the `8086` registers. These registers are split into the following four categories.
+ - General Purpose Registers
+ - Index Registers
+ - Status and Control Registers
+ - Segment Regsiters
+
+### General Purpose Registers
+There are four general purpose registers:
+#### AX:
+AX is used as an [`accumulator`](https://www.computerhope.com/jargon/a/accumulator.htm) and is preffered for most arthimetic and logical operations. It acts as a temporary storage location which holds an intermediate value in a mathematical and logical calculation. Each of the previous value in the accumulator is overwritten with new intermediate results of an operation.
+Consider the following example, `3 + 4 + 5`, the accumulator would firstly hold the value `3`, then add 4 and  then it would hold `7` and then 5 would be added to 7 and the accumulator would hence hold `12`. The `AX` register consists of two sub-registers, each of `8 bits`. One is called `AH`, the other is `AL`, where H and L represent `High` and `Low` respectively.
+In order to understand these, consider a 16-bit binary number,
+<b><p style="text-align:center;">01011010-01001001</p></b>
+This number is broken down into two seperate portions, each of 8 bit.
+The upper portion - `01011010` is called `AH` -> Accumulator High, while, the lower portion `01001001` is called `AL` -> Accumulator Low.
+-> NOTE: All The `General Purpose Registers` are divided into sub-registers, each of `8 bits` in a similar fashion.
+Consider a following small assembly program to get a better grasp at the concept:
+-> Ignore the `syntax` at this moment, everything will be explained later in a much better fashion.
+```asm
+; Example code for understanding the use of AX
+.386
+.model flat , stdcall;
+.stack 4096
+.code
+main PROC
+	; Adding three numbers: 3 + 4 + 5
+	mov ax, 3
+	add ax, 4
+	add ax, 5
+	; ax -> 12
+	ret
+main ENDP
+END main
+```
+After running this program, we can have a look at the registers window in our Visual Studio, we can see that, AX -> 12. Just by looking at the `main` procedure, we can somewhat grasp as to what is going on.
+#### BX:
+BX is used as a `base` register and is typically used to hold the address of a procedure or a variable. In other words, it stores the value of the offset.
+#### CX:
+CX is called as `count` register and is typically used for looping.
+#### DX:
+# Integers:
 ## Structure:
 
-# > Directives:
+# Directives:
 - Assist and control assembly process
 - Change the way code is assembled
 - Also called pseudo-ops
@@ -80,7 +144,7 @@ Has the following types:
 ### .DWORD:
 - Same as .DD
 
-# > Instruction:
+# Instruction:
 - A statement that becomes exectuable when a program is assembled is called an Instruction.
 - They are translated by assembler into machine language bytes.
 
@@ -339,11 +403,11 @@ A DWORD occupies 32 bits or 8 Bytes in memory and can represent 0-4,294,967,296 
 	;; Each offset has a difference of 4 as a WORD consists of 4 BYTES
 ```
 
-### ENDIANESS:
+# ENDIANESS:
 Defines how data is stored and received from memory.
 x86 uses Little Endian Order. This means that LSB is stored at the first memory address allocated. The rest are stored in consecutive memory block and go from LSB to MSB. Consider the following number : `12345678h`
 In little endian, the table would be as follows:
-```
+```sql
 12345678h
 
 Little Endian:
