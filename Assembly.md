@@ -1,9 +1,11 @@
 # Author: Ali Taqi Wajid
 ### Book : [KIP R. Irvine Assembly Language for x86 Processor Sixth Edition](http://index-of.es/Programming/Assembly/Assembly%20Language%20for%20x86%20Processors%206th%20Ed.pdf)
 ### Course : *CS232*- Computer Organization and Assembly Langauge
-----
-
+---
+# NOTE: I'm learning and making these notes at the same time, do let me know if there's any issue in any of these :)
+---
 # List of Content:
+### [Number Conversions]() -> Haven't written about it yet (Very long topic)
 ### [x86 Data Types](#x86-data-types-1)
 ### [Basic x86 Microcomputer Design](#basic-x86-microcomputer-design-1)
 ### [Instruction Execution Cycle](#instruction-execution-cycle)
@@ -98,12 +100,11 @@ One of the major difference b/w each of the modes is in the way memory addressin
  ## 8086 Registers:
  Before moving on towards the more complex `extended` registers of x86 architecture, we must first know the basics, the `16 bit` registers or the `8086` registers. These registers are split into the following four categories.
  - General Purpose Registers
- - Index Registers
- - Status and Control Registers
- - Segment Regsiters
+ - Segment Registers
+ - Special Purpose Registers
 
 ### 16-bit General Purpose Registers
-There are four general purpose registers:
+General There are eight general purpose registers:
 #### AX:
 AX is used as an [`accumulator`](https://www.computerhope.com/jargon/a/accumulator.htm) and is preffered for most arthimetic and logical operations. It acts as a temporary storage location which holds an intermediate value in a mathematical and logical calculation. Each of the previous value in the accumulator is overwritten with new intermediate results of an operation.
 Consider the following example, `3 + 4 + 5`, the accumulator would firstly hold the value `3`, then add 4 and  then it would hold `7` and then 5 would be added to 7 and the accumulator would hence hold `12`. The `AX` register consists of two sub-registers, each of `8 bits`. One is called `AH`, the other is `AL`, where H and L represent `High` and `Low` respectively.
@@ -136,25 +137,41 @@ BX is used as a `base` register and is typically used to hold the address of a p
 #### CX:
 CX is called as `count` register and is typically used for looping. Just like AX, this also can be divided into 2 sub-registers of 8 bits known as `CH` and `CL`
 #### DX:
-DX is called as `data` register and is commonly used for multiplication and division. Just like AX, this also can be divided into 2 sub-registers of 8 bits known as `DH` and `DL`
+DX is called as `data` register and is commonly used for multiplication and division. Just like AX, this also can be divided into 2 sub-registers of 8 bits known as `DH` and `DL`.
+> Each of these `GPR` can be treated either as a `16 bit` quantity or an `8 bit` quantity. We have already discussed this topic in [AX](#AX)
+#### SI
+`SI` stands for `Source Index`
+#### DI
+`DI` stands for `Destination Index`
+#### BP
+`BP` stands for `Base Pointer`
+#### SP
+`SP` stands for `Stack Pointer`
 
 ### Segment Registers:
-- CS
-- DS
-- ES
-- SS
-### Index Registers:
-- SI
-- DI
-- DP
-- SP
-### Instruction Pointer
-- IP
-### Flags Register
-- Flags
+Segment registers deal with selecting blocks of main memory. A segment register is 16-bit. A segment register points at the beginning of a segment in memory. In `8086`, the segments can be no longer than 64K bytes. This `64K segment limitation` caused a lot of issues. Keeping those issues aside, there are 4 segment registers:
+#### CS:
+`CS` stands for `Code Segment`. This register points at the segment containing the currently executing machine instructions. The `64K segment limitation` that we talked about earlier doesn't apply here as the `8086` programs can be longer than the 64K bytes size. What we need is multiple code segments. As we know that we can easily change the value of the `CS` register, we can easily switch to next segment having the remaining part of the code and then execute it from there.
+#### DS
+`DS` stands for `Data Segment`. This register generally points at the global variables in the program. Again, we're limited to `64K bytes` but we can always change the value and access the data in the other segments.
+#### ES
+`ES` stands for `Extra Segment`. What it is, is, well - an extra segment. This segment comes into play when the programs want access to segments and it is unable to access or modify the other segments.
+#### SS
+`SS` stands for `Stack Segment`. This register points at the segment containing the stack. `The Stack` contains all the important stuff such as `machine state information`, `subroutine return addresses`, `procedure parameters`, and `local variables of a particular subroutine`. In a normal 8086 implementation, the `Stack Segment` register cannot be modified as many of the underlying implementation of the program and that of the system, depends on it.
+
+### Special Purpose Registers
+There are two special purpose registers. We cannot access these registers the same way as we can `GPR`. These are controlled and manipulated by the CPU directly. The special purpose registers are:
+#### IP
+`IP` stands for `Instruction Pointer`. This contains the address of the instruction currently being executed.
+#### Flags Register
+Flags register; unlike all the other registers, only hold collection of 1 bit values. The size of the flag register is `16 bits` but, `8086` only uses `9 bits`. Out of those, only `four` is used most of the time. 4 of those flags are:
+- Zero
+- Carry
+- Sign
+- Overflow
 
 ## x86 General Purpose Registers.
-Unlike [16-bit general purpose registes](#16-bit-general-purpose-registers), there are 8 32 bits general purpose registers:
+Similar to [16-bit general purpose registes](#16-bit-general-purpose-registers), there are 8 32 bits general purpose registers:
 - EAX
 - EBX
 - ECX
@@ -163,9 +180,11 @@ Unlike [16-bit general purpose registes](#16-bit-general-purpose-registers), the
 - ESP
 - ESI
 - EDI
+
 Where `E` in each of these stands for `Extended`. Meaning each of these are extended from their orignal counter-parts. EAX is `Extended` from `AX` etc. Meaning, an additional 32 bit extra data can be stored in each of these registers. As we can notice that, the 16-bit Segment Registers from 8086 have also been added here as part of the General Purpose Registers.
 
-#### EAX
+#### EAX:
+EAX stands for `Extended Accumulator` Register.
 #### EBX
 #### ECX
 #### EDX
@@ -188,9 +207,9 @@ Similar to 8086, the Segment Registers in x86 are also 16 bits. But, from 4 in 8
 ## Flags Register
 - EFlags
 
-Each of these `GPR` can be treated either as a `16 bit` quantity or an `8 bit` quantity. We have already discussed this topic in [AX](#AX)
 # Integers:
 ## Structure:
+> Haven't touched this topic but writing the heading so i remember that i have to study it.
 
 # Directives:
 - Assist and control assembly process
