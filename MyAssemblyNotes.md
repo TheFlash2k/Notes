@@ -48,11 +48,9 @@ Things to remember about `Binary Integers`:
 --- 
 
 ## Translating Unsigned Binary Integers to Decimal:
-Weighted positional notation represents a convenient way to calculate the decimal value of an unsigned binary integer having n digits:
-`dec  (D n1  2 n1 )  (D n2  2 n2 )    (D 1  2 1 )  (D 0  2 0 )`
-D indicates a binary digit. For example, binary 00001001 is equal to 9. We calculate this value
-by leaving out terms equal to zero:
-`(1  2 3 )  (1  2 0 )  9`
+To translate Binary to Decimal we start from the left and multiply the each digit a power of `2`.
+forexample consider the binary number `110` will be equal to `6`.
+`2E2 x 1 + 2E1 x 1+ 2E0 x 0 = 6`
 
 ## Translating Unsigned Decimals Integers to Binary:
 To translate from Decimal to Binary we repeatedly divide the number by 2 saving each remaineder as a binary digit.
