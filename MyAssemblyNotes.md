@@ -108,6 +108,7 @@ Signed Binary Integers can be `positive` or `negitive`.The `Most Significant Bit
 forexample consider a value 11111110, its two's complement will be:
 
 |Starting value| 00000001|
+|--------------|---------|
 |Step 1: Reverse the bits |11111110|
 |Step 2: Add 1 to the value from Step 1|11111110 +00000001|
 |Sum: Two’s-complement representation|11111111|
