@@ -114,6 +114,58 @@ forexample consider a value 11111110, its two's complement will be:
 |Sum: Two’s-complement representation|11111111|
 
 ## Hexadecimal Two's-Complement:
+In two's complement of hexadecimal numbers we firstly reverse the number and then add 1 to it.To reverse the number we can subtract the number from `15`.
+Here are the examples: 
+
+`6A3D --> 95C2 + 1 --> 95C3`
+`95C3 --> 6A3C + 1 --> 6A3D`
+
+## Coverting Signed Binary to Decimal:
+if the `Most Significant Bit` is `1` then it means the number is a `negitive signed integer`.For example, signed binary `11110000` has a `1` in the highest bit, indicating that it is a negative
+integer.
+
+|Starting value| 11110000|
+|--------------|---------|
+|Step 1: Reverse the bits| 00001111|
+|Step 2: Add 1 to the value from Step 1|00001111 + 1|
+|Step 3: Create the two’s complement|00010000|
+|Step 4: Convert to decimal|16|
+
+As the integer was negitive so its answer is `-16`.
+
+## Coverting Signed Decimal to Binary:
+Following are the Steps for this conversion:
+<ul>
+	<li>First, Convert The decimal integer to Binary</li>
+	<li>If original Decimal was negitive create two's complement of the binary number from previous conversion</li>
+</ul>
+
+Forexample `-43` will be converted to binary as follows:
+<ul>
+	<li>43 in Binary is 00101011.</li>
+	<li>As the original value is negitive we take two's complement of its binary which will be 11010101.That is how -43 will be represented.</li>
+</ul>
+
+## Converting Signed Decimal to Hexadecimal:
+For the conversion do the following steps:
+<ul>
+	<li>Conver the absolute Decimal value to Hexadecimal.</li>
+	<li>If original decimal was negitive take two's complement of its hexadecimal equilent.</li>
+</ul>
+
+## Converting Signed Hexadecimal to Decimal:
+For conversion follow these steps mentioned below :
+<ul>
+	<li>If the giver hexadecimal number is negitive, take its two's complement ,otherwise retain the original number</li>
+	<li>Convert it to decimal after the earlier step.</li>
+	<li>if original value was negitive add minus sign to it.</li>
+</ul>
+
+
+
+
+
+
 
 
 
