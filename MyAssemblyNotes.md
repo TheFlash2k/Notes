@@ -161,11 +161,7 @@ For conversion follow these steps mentioned below :
 	<li>if original value was negitive add minus sign to it.</li>
 </ul>
 
+---------
 
-
-
-
-
-
-
-
+## Binary Subtraction:
+Binary Subtraction is fairly easy.Take an example `01101 - 00111`.In decimal it is equal to `13 - 7` so the answer will be `6` that is `00110` in binary.
