@@ -50,7 +50,9 @@ Things to remember about `Binary Integers`:
 ## Translating Unsigned Binary Integers to Decimal:
 To translate Binary to Decimal we start from the left and multiply the each digit a power of `2`.
 forexample consider the binary number `110` will be equal to `6`.
+Solution: 
 `2E2 x 1 + 2E1 x 1+ 2E0 x 0 = 6`
+where `2En` means 2 to the `raised power`.
 
 ## Translating Unsigned Decimals Integers to Binary:
 To translate from Decimal to Binary we repeatedly divide the number by 2 saving each remaineder as a binary digit.
@@ -67,4 +69,13 @@ To translate from Decimal to Binary we repeatedly divide the number by 2 saving 
 We can concatenate the binary bits from the remainder column of the table in reverse order `(D 5 , D 4 , . . .)` to produce binary `100101`. Because computer storage always consists of binary
 numbers whose lengths are multiples of `8`, we fill the remaining two digit positions on the left
 with zeros, producing `00100101`.
+
+## Binary Addition:
+When Adding Binary Number keep in mind that `1+1` will produce `10`with `1` being the carry to the next digit.
+consider this addition forexample 
+       			
+       			|0|0|0|0|0|1|0|0|
+       		`+` |0|0|0|0|0|1|1|1|
+       			-----------------
+       			|0|0|0|0|1|0|1|1|
 
