@@ -72,10 +72,47 @@ with zeros, producing `00100101`.
 
 ## Binary Addition:
 When Adding Binary Number keep in mind that `1+1` will produce `10`with `1` being the carry to the next digit.
-consider this addition forexample 
-       			
-       			00000100
-       		    00000111
-       			---------
-       			00001011
+
+`00000100 + 00000111 = 00001011`
+
+--- 
+
+## Integer Storage Sizes (Data types):
+Basic Storage unit in a `x86` computer is `byte` containing `8 bits`.Some of the data types are:
+
+|Data| Type | Size |
+|Byte |8|
+|Word |16|
+|DoubleWord| 32|
+|Quadword| 64|
+|Double Quadword| 128 |
+
+----
+
+## Hexadecimal Addition:
+Hexadecimal Addition works the same way as decimal addition.Hexadecimal addition is used to locate new addresses in the memory.
+For example, let’s add the hexadecimal values 6A2 and 49A. In the lowest digit position,`2 + A = decimal 12`, so there is no carry and we use `C` to indicate the hexadecimal sumdigit. In the next position, `A + 9 = decimal 19`, so there is a carry because `19 ≥ 16` , the number base. We calculate `19 MOD 16 = 3`, and carry a 1 into the third digit position. Finally,we add `1 + 6 + 4 = decimal 11`, which is shown as the letter `B` in the third position of the
+sum. The hexadecimal sum is `B3C`.
+
+So , `6A2 + 49A = B3C`
+
+----
+
+## Signed Binary Integers
+Signed Binary Integers can be `positive` or `negitive`.The `Most Significant Bit MSB` represents the sign: `0 is positive and 1 is negitive`.
+ 
+-----
+
+## Two's-Complement Representation
+`Negitive Integers` use Two's-Complement Representation using the rule that two's complement of a number is its `additive inverse`.
+forexample consider a value 11111110, its two's complement will be:
+
+|Starting value| 00000001|
+|Step 1: Reverse the bits |11111110|
+|Step 2: Add 1 to the value from Step 1|11111110 +00000001|
+|Sum: Two’s-complement representation|11111111|
+
+## Hexadecimal Two's-Complement:
+
+
 
