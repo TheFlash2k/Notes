@@ -75,7 +75,7 @@ When Adding Binary Number keep in mind that `1+1` will produce `10`with `1` bein
 consider this addition forexample 
        			
        			|0|0|0|0|0|1|0|0|
-       		`+` |0|0|0|0|0|1|1|1|
+       		    |0|0|0|0|0|1|1|1|
        			-----------------
        			|0|0|0|0|1|0|1|1|
 
