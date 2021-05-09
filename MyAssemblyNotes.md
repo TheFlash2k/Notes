@@ -45,5 +45,28 @@ Things to remember about `Binary Integers`:
 	<li>Dots can be inserted after every four binary integers for readibility</li>
 </ul>
 
+--- 
 
- 
+## Translating Unsigned Binary Integers to Decimal:
+Weighted positional notation represents a convenient way to calculate the decimal value of an unsigned binary integer having n digits:
+`dec  (D n1  2 n1 )  (D n2  2 n2 )    (D 1  2 1 )  (D 0  2 0 )`
+D indicates a binary digit. For example, binary 00001001 is equal to 9. We calculate this value
+by leaving out terms equal to zero:
+`(1  2 3 )  (1  2 0 )  9`
+
+## Translating Unsigned Decimals Integers to Binary:
+To translate from Decimal to Binary we repeatedly divide the number by 2 saving each remaineder as a binary digit.
+
+| Division | Quotient | Remainder |
+|----------|----------|-----------|
+|37 / 2 | 18 | 1 |
+| 18 / 2 | 9 | 0 |
+|9 / 2 | 4 | 1|
+|4 / 2 | 2 | 0 |
+|2 / 2 | 1 | 0 |
+|1 / 2| 0 | 1|
+
+We can concatenate the binary bits from the remainder column of the table in reverse order `(D 5 , D 4 , . . .)` to produce binary `100101`. Because computer storage always consists of binary
+numbers whose lengths are multiples of `8`, we fill the remaining two digit positions on the left
+with zeros, producing `00100101`.
+
