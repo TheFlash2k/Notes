@@ -74,8 +74,8 @@ with zeros, producing `00100101`.
 When Adding Binary Number keep in mind that `1+1` will produce `10`with `1` being the carry to the next digit.
 consider this addition forexample 
        			
-       			|0|0|0|0|0|1|0|0|
-       		    |0|0|0|0|0|1|1|1|
-       			-----------------
-       			|0|0|0|0|1|0|1|1|
+       			00000100
+       		    00000111
+       			---------
+       			00001011
 
