@@ -1,5 +1,5 @@
-# Author: Asif Masood
-### Book : [KIP R. Irvine Assembly Language for x86 Processor Sixth Edition](http://index-of.es/Programming/Assembly/Assembly%20Language%20for%20x86%20Processors%206th%20Ed.pdf)
+# Notes Made by: [A51F221B](https://github.com/A51F221B)
+### Reference Book : [KIP R. Irvine Assembly Language for x86 Processor Sixth Edition](http://index-of.es/Programming/Assembly/Assembly%20Language%20for%20x86%20Processors%206th%20Ed.pdf)
 ### Course : *CS232*- Computer Organization and Assembly Langauge
 
 
@@ -34,4 +34,16 @@ A computer simply uses `0s` and `1s` at the lowest level representing `off` and 
 | Octal  | 8 | 0 1 2 3 4 5 6 7 |
 | Decimal| 10| 0 1 2 3 4 5 6 7 8 9 |
 | Hexadecimal | 16 | 0 1 2 3 4 5 6 7 8 9 A B C D E F |
+
+Things to remember about `Binary Integers`:
+
+<ul>
+	<li>Binary Integers can be signed or unsigned</li>
+	<li>Signed Integers can be either positive or negitive</li>
+	<li>An unsigned integer is by default positive</li>
+	<li>Zero is considered positive</li>
+	<li>Dots can be inserted after every four binary integers for readibility</li>
+</ul>
+
+
  
