@@ -5,7 +5,7 @@
 # NOTE: I'm learning and making these notes at the same time, do let me know if there's any issue in any of these :)
 ---
 # List of Content:
-### [Number Conversions]() -> Haven't written about it yet (Very long topic)
+### [Number Conversions](#Number-Conversions) -> Haven't written about it yet (Very long topic)
 ### [x86 Data Types](#x86-data-types-1)
 ### [Basic x86 Microcomputer Design](#basic-x86-microcomputer-design-1)
 ### [Instruction Execution Cycle](#instruction-execution-cycle)
@@ -16,6 +16,11 @@
 ### [Instruction](#instruction-1)
 ### [Endianess](#endianess-1)
 ---
+
+# Number Conversions:
+[A very good online table](https://kb.iu.edu/d/afdl)
+[A good signed/unsigned converter](https://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html)
+
 # x86 Data Types:
 ## Unsigned:
 | System | Range | Power of 2 | In Bytes | In Bits |
@@ -520,3 +525,67 @@ If we were to look at Big Endian, the table would be as follows:
   0003        |     78
 		  
 ```
+
+# Data Transfer Instructions
+![](./imgs/reginfo.png) <br>
+## Operand Types
+### Instruction format with varying number of operands:
+```asm
+mnemonic 
+mnemonic [destination]
+mnemonic [destination], [source]
+mnemonic [destination], [source 1], [source 2]
+```
+### Types of Instruction Operands:
+There are 3 instruction operands:
+1) Immediate -> uses numeric literal expressions
+2) Register -> uses named Registers in the CPU
+3) Memory -> uses references i.e. memory locations.
+
+### Direct Memory Operand
+Variable names are references to offset within the .DATA segment. Consider the following assembly code:
+```asm
+.DATA
+	num1 BYTE 13h
+```
+This code shows that a `BYTE` with an identifier of `num1` has been allocated with data `13h` in the data segment.
+Suppose, this `num1` was located at an offset of `10400h`. If we were to move it to a register, let's say, `AL` register which is of 8 bits. The Assembly Instruction would look something like this
+```asm
+mov AL, num1
+```
+Now, Let's suppose, before moving num1 to AL, AL was specifically set to `NULL` and hence, the value of `AL` would've been -> `00000000`. Now, we know that the offset of `num1` was `10400h`, Hence, after execution of this code, `AL` would become, `00010400`. Meaning that, the offset of num1 in memory would be written into the AL register. Although, we can also simply do a direct reference through use of OPCodes but it is consider good practice and makes the code readable if we simply use the variable/symbolic names
+
+## The MOV Instruction.
+The `MOV` instruction is self-explanatory. What it does is just simply copy data from the source operand to destination operand. A simple MOV Instruction format looks something like this:
+```asm
+mov [destination], [source]
+```
+The destination operand in this instruction is changed while the source remains unchanged. 
+### Copying Smaller Values to Larger ones
+In Assembly, we cannot directly copy a smaller value to a larger one. Consider `EAX`, if we were to copy a 16-bit instruction to that register, we would face an error as `EAX` is of `32-bits`. Now, in order to do that, we use a few methods. One of them is:
+```asm
+; Consider a count variable of 16 bits unsigned value.
+.data
+count WORD 1
+
+.code
+mov ECX, 0
+mov CX, count
+```
+By looking at the code above, we can see that, what we're actually doing is firstly setting the entire 32-bit register to 0. Which would make ECX look something like this
+```asm
+00000000 00000000 00000000 00000000
+				 ======= CX =======
+============== ECX ================
+```
+                                   
+Now, when `mov CX, count` is executed, the first 16 bits of ECX are set to the value of `count` and hence it is changed to something like this:
+```asm
+00000000 00000000 XXXXXXXX XXXXXXXX
+				 ======= CX =======
+============== ECX ================
+; Where X represents any hexadecimal value.
+```
+
+### MOVZX (MOV with zero-extend)
+> Works only with unsigned values
