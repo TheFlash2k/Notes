@@ -65,7 +65,7 @@ Has the following types:
 - RAM
 
 ## 3. Buses:
-![](./imgs/buses.png) <br>
+![](buses.png) <br>
 A bus is a group of parallel wires that copy data from one of parts of the computer to another. A bus is a pathway for digital signals to rapidly move data. There are 3 buses:
 - Data Bus
 - Control Bus
@@ -100,7 +100,7 @@ This is also known as `SMM`. It provides the Operating System with the mechanism
 One of the major difference b/w each of the modes is in the way memory addressing works. Both the amount of memory that can be addressed and the translation process between logical addresses and to physical addresses may vary depending on the operating mode.
 
 # Registers:
-![](./imgs/registers.png) <br>
+![](registers.png) <br>
  A register is a storage unit / container inside the processor core which can be accessed at much higher speeds than the conventional memory.
  ## 8086 Registers:
  Before moving on towards the more complex `extended` registers of x86 architecture, we must first know the basics, the `16 bit` registers or the `8086` registers. These registers are split into the following four categories.
@@ -527,7 +527,7 @@ If we were to look at Big Endian, the table would be as follows:
 ```
 
 # Data Transfer Instructions
-![](./imgs/reginfo.png) <br>
+![](reginfo.png) <br>
 ## Operand Types
 ### Instruction format with varying number of operands:
 ```asm

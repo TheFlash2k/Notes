@@ -1,2 +1,0 @@
-# Overlook
-![[AD.png]]
