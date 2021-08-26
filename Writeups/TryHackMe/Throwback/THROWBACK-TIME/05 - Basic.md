@@ -1,0 +1,3 @@
+-> Webserver running on Port 80
+-> Has a SQL Server
+-> Can Upload microsoft excel files

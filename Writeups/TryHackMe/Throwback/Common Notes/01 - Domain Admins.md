@@ -1,0 +1,5 @@
+## Following are the domain admins:
+SPOOKS@THROWBACK.local
+ADMINISTRATOR@THROWBACK.local
+MERCERH@THROWBACK.local
+TASKMGR@THROWBACK.local
