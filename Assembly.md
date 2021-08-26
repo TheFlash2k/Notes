@@ -42,7 +42,7 @@
 ## 1. CPU:
 It is called Central Processing Unit and it is where the calculations and all the logical operations take place and it contains a limited number of storage locations called `registers`.
 The other components interact with the CPU through the use of PINS
-Most of these pings connect to the `data bus`, `control bus` and `address bus`
+Most of these pins connect to the `data bus`, `control bus` and `address bus`
 It also has the following parts:
 - High Frequency Clock
 - Contrl Unit (CU)
