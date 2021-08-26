@@ -47,9 +47,11 @@
 - [X] \[Task 30\] SYNCHRONIZE
 - [X] \[Task 31\] This Forest has trust issues
 - [X] \[Task 32\] r/badcode would like a word
-- [ ] \[Task 33\] Identity Theft is not a Joke Jim
-- [ ] \[Task 34\] So anyways, I just started hiring..
-- [ ] \[Task 35\] Lost and Found
-- [ ] \[Task 36\] You've Got Mail!
-- [ ] \[Task 37\] Kerberoasting II Electric Boogaloo
-- [ ] \[Task 38\] Endgame
+- [X] \[Task 33\] Identity Theft is not a Joke Jim
+- [x] \[Task 34\] So anyways, I just started hiring..
+- [x] \[Task 35\] Lost and Found
+- [x] \[Task 36\] You've Got Mail!
+- [x] \[Task 37\] Kerberoasting II Electric Boogaloo
+- [x] \[Task 38\] Endgame
+
+---

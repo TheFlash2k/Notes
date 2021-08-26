@@ -13,11 +13,14 @@ When using nmap to discover each host, we found the following 3 hosts to be publ
 
 ## Default Credentials for THROWBACK-FW01:
 The `10.200.19.138` which is the Firewall is running PFSense. Trying the default credentials of `admin:pfsense` gave us direct access to the pfsense configuration panel
+
 ![[Pasted image 20210512180419.png]]
 
 ## Reverse Shell into THROWBACK-FW01:
 By enumerating the PFSense webpage, we can see that there is a diagnostics tab which has a `Command Prompt` option. Using a simple php reverse shell can give us a direct root shell without much of a hassle.
-![[Pasted image 20210512182729.png]]
+
+![[imgs/Pasted image 20210512182729.png]]
+
 ![[Pasted image 20210512183157.png]]
 
 ## Weak Credentials:
