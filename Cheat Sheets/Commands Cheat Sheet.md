@@ -15,9 +15,13 @@ scp file user@ip:/path/on/linux
 ```
 -> We can also use FTP if the FTP Server has been setup on our linux box.
 ```bash
-ftp ip
+ftp ip # Login required obviosuly xdd
 put file
 ```
+
+# File Downloading:
+## From Linux To Windows:
+We need to check if wget or curl is available on the box, if they are, then its really easy to 
 
 # Networking:
 ## Fixing Internet and Asking DHCP for IP:
