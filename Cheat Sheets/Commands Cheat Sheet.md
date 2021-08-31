@@ -6,7 +6,18 @@
 
 # File Transfers:
 ## From Linux to Windows:
+-> There are many ways to transfer from linux to windows. One of the best ways that I use, is to create a server in the directory using `python -m SimpleHTTPServer` or `python3 -m http.server`. This will start a server on port 8000. The other is using SSH (See below to check the syntax). Another way to use FTP
 
+## From Windows To Linux:
+-> We can use SSH to copy from Windows to Linux. We'd firstly need to setup a ssh server.
+```bash
+scp file user@ip:/path/on/linux
+```
+-> We can also use FTP if the FTP Server has been setup on our linux box.
+```bash
+ftp ip
+put file
+```
 
 # Networking:
 ## Fixing Internet and Asking DHCP for IP:

@@ -125,8 +125,10 @@ payload += shell_code
 -> Reason why we add NOPs: We can note the difference of between the address of ESP and then follow the data in dump and then we can see that between EIP and ESP there exists some bytes, so, within those bytes, we will add our NOPs. We add even more nops so that we can easily know that the shell code will definitely execute.
 
 ## Linux:
+In Linux, we'll use GDB, the following few commands are very helpful:
 ```
-test
+cyclic <offset>
+cyclic -l <4 byte from RSP>
 ```
 
 # ASLR
