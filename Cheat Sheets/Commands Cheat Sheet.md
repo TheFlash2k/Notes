@@ -28,7 +28,6 @@ We need to check if wget or curl is available on the box, if they are, then its 
 curl -O <destination> <source>
 wget <source> -o <destination>
 ```
-
 -> Powershell:
 ```powershell
 Invoke-WebRequest -Uri <source> -OutFile <destination>
