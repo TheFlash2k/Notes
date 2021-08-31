@@ -21,7 +21,27 @@ put file
 
 # File Downloading:
 ## From Linux To Windows:
-We need to check if wget or curl is available on the box, if they are, then its really easy to 
+We need to check if wget or curl is available on the box, if they are, then its really easy to download files. We can also use natvie powershell and cmd commands:
+
+-> Native Tools:
+```bash
+curl -O <destination> <source>
+wget <source> -o <destination>
+```
+
+-> Powershell:
+```powershell
+Invoke-WebRequest -Uri <source> -OutFile <destination>
+(New-Object System.Net.WebClient).DownloadFile(<source>, <destination>)
+```
+
+-> CMD:
+```batch
+:: Using CMD to invoke powershell.
+powershell -c "Invoke-WebRequest -Uri 'https://www.website.com/file.zip' -OutFile 'c:\temp\file.zip'"
+:: Native Batch Commands:
+certutil.exe -urlcache -f <source> <destination>
+```
 
 # Networking:
 ## Fixing Internet and Asking DHCP for IP:
