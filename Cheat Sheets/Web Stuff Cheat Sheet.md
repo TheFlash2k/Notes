@@ -64,4 +64,7 @@ print(f"\n[+] Payload : {payload}\n[+] Number of columns returned: {len(payload.
 #### Note:
 -   The reason for using `NULL` as the values returned from the injected `SELECT` query is that the data types in each column must be compatible between the original and the injected queries. Since `NULL` is convertible to every commonly used data type, using `NULL` maximizes the chance that the payload will succeed when the column count is correct.
 
-## 2. 
+## 2.
+
+
+# XML XXE:
